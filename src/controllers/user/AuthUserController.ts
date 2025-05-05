@@ -1,8 +1,8 @@
-import { Request,Response } from "express";
+import { Request, Response } from "express";
 import { AuthUserService } from "../../service/user/AuthUserService";
 import { AuthRequest } from "../../interface/user/AuthRequest";
 
-class AuthUserController {
+export class AuthUserController {
   async handle(request: Request, response: Response) {
     const { email, password }: AuthRequest = request.body;
     const authUserService = new AuthUserService();
