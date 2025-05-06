@@ -26,4 +26,14 @@ router.post(
   isAuthenticated,
   new CreateCategoryController().handle
 );
+router.put(
+  "/category/edit",
+  isAuthenticated,
+  new CreateCategoryController().handle
+);
+router.get(
+  "/category/all",
+  isAuthenticated,
+  new CreateCategoryController().handle
+);
 export { router };
