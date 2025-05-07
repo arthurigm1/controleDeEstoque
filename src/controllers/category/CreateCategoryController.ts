@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { CreateCategoryService } from "../../service/category/CreateCategoryService";
-import { CategoryRequest } from "../../interface/category/CategoryRequest";
+import { CategoryRequest } from "../../model/interface/category/CategoryRequest";
 
 export class CreateCategoryController {
   async handle(request: Request, response: Response) {

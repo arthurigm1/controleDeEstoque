@@ -8,11 +8,10 @@ import { CreateCategoryController } from "./controllers/category/CreateCategoryC
 import { RemoveCategoryController } from "./controllers/category/RemoveCategoryController";
 import multer from "multer";
 import uploadConfig from "./config/multer";
-
+import { CreateProductController } from "./controllers/product/CreateProductController";
 
 const router = Router();
 const upload = multer(uploadConfig.upload("./tmp"));
-
 
 router.get("/test", (request: Request, response: Response) => {
   return response.json({ ok: true });
@@ -47,5 +46,13 @@ router.delete(
   "/category/remove",
   isAuthenticated,
   new RemoveCategoryController().handle
+);
+
+// File upload route
+router.post(
+  "/product",
+  isAuthenticated,
+  upload.single("file"),
+  new CreateProductController().handle
 );
 export { router };
